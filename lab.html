@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Зертханалық жұмыс</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="labs.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+<!-- Қолданылуы: lab.html?id=pendulum  (id мәндері labs.js ішінде) -->
+<main class="single" id="root"></main>
+<script>
+  const id = new URLSearchParams(location.search).get("id");
+  const i = LABS.findIndex(l => l.id === id);
+  const root = document.getElementById("root");
+  if (i < 0) {
+    root.innerHTML = "<p>Жұмыс табылмады. Мысалы: <code>lab.html?id=pendulum</code></p>";
+  } else {
+    document.title = LABS[i].title;
+    root.appendChild(makeCard(LABS[i], i + 1, { compact: true }));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Физика зертханасы</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="labs.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+<header>
+  <h1>Физика: зертханалық жұмыстар мен стимуляциялар</h1>
+  <p>Әр жұмыстың суретін басыңыз немесе QR-кодты телефонмен сканерлеңіз — стимуляция ашылады.</p>
+</header>
+<main class="grid" id="grid"></main>
+<script>
+  const grid = document.getElementById("grid");
+  LABS.forEach((lab, i) => grid.appendChild(makeCard(lab, i + 1)));
+</script>
+</body>
+</html>
